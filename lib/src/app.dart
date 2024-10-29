@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:surapp_flutter/src/localization/generated/app_localization.dart';
-
-import 'sample_feature/sample_item_details_view.dart';
-import 'sample_feature/sample_item_list_view.dart';
+import 'package:surapp_flutter/core/navigation/app_router.dart';
+import 'package:surapp_flutter/core/localization/generated/app_localization.dart';
 import 'settings/settings_controller.dart';
-import 'settings/settings_view.dart';
 
 class MyApp extends StatelessWidget {
   const MyApp({
@@ -19,31 +16,15 @@ class MyApp extends StatelessWidget {
     return ListenableBuilder(
       listenable: settingsController,
       builder: (BuildContext context, Widget? child) {
-        return MaterialApp(
+        return MaterialApp.router(
           localizationsDelegates: AppLocalizations.localizationsDelegates,
           supportedLocales: AppLocalizations.supportedLocales,
           theme: ThemeData(),
           darkTheme: ThemeData.dark(),
           themeMode: settingsController.themeMode,
-
-          // Define a function to handle named routes in order to support
-          // Flutter web url navigation and deep linking.
-          onGenerateRoute: (RouteSettings routeSettings) {
-            return MaterialPageRoute<void>(
-              settings: routeSettings,
-              builder: (BuildContext context) {
-                switch (routeSettings.name) {
-                  case SettingsView.routeName:
-                    return SettingsView(controller: settingsController);
-                  case SampleItemDetailsView.routeName:
-                    return const SampleItemDetailsView();
-                  case SampleItemListView.routeName:
-                  default:
-                    return const SampleItemListView();
-                }
-              },
-            );
-          },
+          routerConfig: AppRouter.router(
+            settingsController: settingsController,
+          ),
         );
       },
     );

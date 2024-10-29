@@ -1,8 +1,8 @@
-arb-dir: lib/src/localization
-output-dir: lib/src/localization/generated
+arb-dir: lib/core/localization
+output-dir: lib/core/localization/generated
 template-arb-file: app_ru.arb
 output-localization-file: app_localization.dart
 nullable-getter: false
 synthetic-package: false
-untranslated-messages-file: lib/src/localization/generated/untranslated_strings.txt
+untranslated-messages-file: lib/core/localization/generated/untranslated_strings.txt
 header: '// ignore_for_file: always_use_package_imports, unnecessary_string_escapes'
