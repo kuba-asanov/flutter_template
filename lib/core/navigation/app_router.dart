@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
-import 'package:surapp_flutter/src/sample_feature/sample_item_list_view_route.dart';
-import 'package:surapp_flutter/src/settings/settings_controller.dart';
+import 'package:surapp_flutter/features/sample_feature/sample_item_list_view_route.dart';
 
 class AppRouter {
   AppRouter._();
@@ -11,7 +10,6 @@ class AppRouter {
 
   static GoRouter router({
     // required InitialAuthStatus authStatus,
-    required SettingsController settingsController,
     GlobalKey<NavigatorState>? navigatorKey,
   }) {
     return _router ??= GoRouter(
@@ -20,7 +18,7 @@ class AppRouter {
       //     ? MainScreenRoute().path
       //     : OnboardingRoute().path,
       routes: [
-        SampleItemListViewRoute(settingsController),
+        SampleItemListViewRoute(),
       ],
     );
   }

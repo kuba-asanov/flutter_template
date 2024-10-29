@@ -1,13 +1,12 @@
-name: feature
+name: bloc
 description: A new brick created with the Mason CLI.
-
 version: 0.1.0+1
 
 environment:
-  mason: ">=0.1.0-dev.51 <0.1.0"
+  mason: ">=0.1.0-dev.60 <0.1.0"
 
 vars:
   name:
     type: string
     default: One
-    prompt: Feature name? ('One' by default)
+    prompt: Bloc name? ('One' by default)

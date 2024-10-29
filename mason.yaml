@@ -4,3 +4,5 @@
 bricks:
   feature:
     path: bricks/feature
+  bloc:
+    path: bricks/bloc
