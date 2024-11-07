@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:surapp_flutter/common/app_assets/app_assets.dart';
 import 'package:surapp_flutter/core/localization/extension.dart';
 import 'package:surapp_flutter/features/sample_feature/sample_item_list_view_route.dart';
 
@@ -35,8 +36,8 @@ class SampleItemListView extends StatelessWidget {
 
           return ListTile(
               title: Text(context.locale.sampleItem(item.id)),
-              leading: const CircleAvatar(
-                foregroundImage: AssetImage('assets/images/flutter_logo.png'),
+              leading: CircleAvatar(
+                foregroundImage: AssetImage(AppAssets.image.flutterLogo),
               ),
               onTap: () => router.openDetials(context));
         },
