@@ -12,3 +12,9 @@ class UpdateThemeEvent extends SettingsEvent {
 
   final ThemeMode? newThemeMode;
 }
+
+class UpdateLocaleEvent extends SettingsEvent {
+  const UpdateLocaleEvent(this.newLocale);
+
+  final Locale? newLocale;
+}

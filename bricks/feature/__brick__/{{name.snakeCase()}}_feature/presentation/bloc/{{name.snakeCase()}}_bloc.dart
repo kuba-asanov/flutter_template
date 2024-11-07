@@ -1,13 +1,13 @@
-import 'package:common_base_api/common_base_api.dart';
-import 'package:common_base_api/bloc/base_bloc.dart';
-import 'package:common_base_api/bloc/base_event.dart';
-import '../../domain/models/some_data.dart';
+{{#isUseFreezed}}import 'package:freezed_annotation/freezed_annotation.dart';{{/isUseFreezed}}
+import 'package:equatable/equatable.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../domain/usecases/get_some_data_{{#isUseModelAsList}}list_{{/isUseModelAsList}}usecase.dart';
-
+{{#isUseFreezed}}import '../../domain/models/some_data.dart';{{/isUseFreezed}}
 part '{{name.snakeCase()}}_event.dart';
 part '{{name.snakeCase()}}_state.dart';
+{{#isUseFreezed}}part '{{name.snakeCase()}}_status.dart';{{/isUseFreezed}}
 
-class {{name.pascalCase()}}Bloc extends BaseBloc<{{name.pascalCase()}}Event, {{name.pascalCase()}}State> {
+class {{name.pascalCase()}}Bloc extends Bloc<{{name.pascalCase()}}Event, {{name.pascalCase()}}State> {
   {{name.pascalCase()}}Bloc({
     required GetSomeDataUsecase getSomeDataUsecase,
   }): 
@@ -25,7 +25,7 @@ class {{name.pascalCase()}}Bloc extends BaseBloc<{{name.pascalCase()}}Event, {{n
 
     result.fold(
       onFailure: (failure) {},   
-      onSuccess: (someData) => emit(Loaded{{name.pascalCase()}}State()),    
+      onSuccess: (data) => emit(Loaded{{name.pascalCase()}}State()),    
     );
   }
 }

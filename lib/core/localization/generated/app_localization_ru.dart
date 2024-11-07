@@ -9,5 +9,28 @@ class AppLocalizationsRu extends AppLocalizations {
   AppLocalizationsRu([String locale = 'ru']) : super(locale);
 
   @override
-  String get appTitle => 'surapp_flutter';
+  String get homeTitle => 'Образцы предметов';
+
+  @override
+  String get settings => 'Настройки';
+
+  @override
+  String get systemTheme => 'Системная тема';
+
+  @override
+  String get lightTheme => 'Светлая тема';
+
+  @override
+  String get darkTheme => 'Темная тема';
+
+  @override
+  String sampleItem(num number) {
+    return 'Образец предмета $number';
+  }
+
+  @override
+  String get theme => 'Тема';
+
+  @override
+  String get localization => 'Локализация';
 }

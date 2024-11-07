@@ -6,7 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:intl/intl.dart' as intl;
 
-import 'app_localization_ky.dart';
+import 'app_localization_en.dart';
 import 'app_localization_ru.dart';
 
 // ignore_for_file: type=lint
@@ -92,15 +92,57 @@ abstract class AppLocalizations {
 
   /// A list of this localizations delegate's supported locales.
   static const List<Locale> supportedLocales = <Locale>[
-    Locale('ky'),
+    Locale('en'),
     Locale('ru')
   ];
 
-  /// No description provided for @appTitle.
+  /// No description provided for @homeTitle.
   ///
   /// In ru, this message translates to:
-  /// **'surapp_flutter'**
-  String get appTitle;
+  /// **'Образцы предметов'**
+  String get homeTitle;
+
+  /// No description provided for @settings.
+  ///
+  /// In ru, this message translates to:
+  /// **'Настройки'**
+  String get settings;
+
+  /// No description provided for @systemTheme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Системная тема'**
+  String get systemTheme;
+
+  /// No description provided for @lightTheme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Светлая тема'**
+  String get lightTheme;
+
+  /// No description provided for @darkTheme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Темная тема'**
+  String get darkTheme;
+
+  /// No description provided for @sampleItem.
+  ///
+  /// In ru, this message translates to:
+  /// **'Образец предмета {number}'**
+  String sampleItem(num number);
+
+  /// No description provided for @theme.
+  ///
+  /// In ru, this message translates to:
+  /// **'Тема'**
+  String get theme;
+
+  /// No description provided for @localization.
+  ///
+  /// In ru, this message translates to:
+  /// **'Локализация'**
+  String get localization;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
@@ -112,7 +154,7 @@ class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> 
   }
 
   @override
-  bool isSupported(Locale locale) => <String>['ky', 'ru'].contains(locale.languageCode);
+  bool isSupported(Locale locale) => <String>['en', 'ru'].contains(locale.languageCode);
 
   @override
   bool shouldReload(_AppLocalizationsDelegate old) => false;
@@ -123,7 +165,7 @@ AppLocalizations lookupAppLocalizations(Locale locale) {
 
   // Lookup logic when only language code is specified.
   switch (locale.languageCode) {
-    case 'ky': return AppLocalizationsKy();
+    case 'en': return AppLocalizationsEn();
     case 'ru': return AppLocalizationsRu();
   }
 

@@ -1,37 +1,79 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:surapp_flutter/core/localization/extension.dart';
+import 'package:surapp_flutter/core/localization/generated/app_localization.dart';
 import 'package:surapp_flutter/features/settings/presentation/bloc/settings_bloc.dart';
 
 class SettingsView extends StatelessWidget {
-  const SettingsView({super.key});
+  const SettingsView({
+    super.key,
+    required this.bloc,
+  });
+
+  final SettingsBloc bloc;
 
   @override
   Widget build(BuildContext context) {
-    final SettingsBloc bloc = context.watch<SettingsBloc>();
-    
+    final locale = context.locale;
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Settings'),
+        title: Text(locale.settings),
       ),
       body: Padding(
         padding: const EdgeInsets.all(16),
-        child: DropdownButton<ThemeMode>(
-          value: bloc.state.themeMode,
-          onChanged: (themeMode) => bloc.add(UpdateThemeEvent(themeMode)),
-          items: const [
-            DropdownMenuItem(
-              value: ThemeMode.system,
-              child: Text('System Theme'),
-            ),
-            DropdownMenuItem(
-              value: ThemeMode.light,
-              child: Text('Light Theme'),
-            ),
-            DropdownMenuItem(
-              value: ThemeMode.dark,
-              child: Text('Dark Theme'),
-            )
-          ],
+        child: BlocBuilder<SettingsBloc, SettingsState>(
+          bloc: bloc,
+          builder: (context, state) {
+            return Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(locale.theme),
+                    DropdownButton<ThemeMode>(
+                      value: state.themeMode,
+                      onChanged: (themeMode) =>
+                          bloc.add(UpdateThemeEvent(themeMode)),
+                      items: [
+                        DropdownMenuItem(
+                          value: ThemeMode.system,
+                          child: Text(locale.systemTheme),
+                        ),
+                        DropdownMenuItem(
+                          value: ThemeMode.light,
+                          child: Text(locale.lightTheme),
+                        ),
+                        DropdownMenuItem(
+                          value: ThemeMode.dark,
+                          child: Text(locale.darkTheme),
+                        )
+                      ],
+                    ),
+                  ],
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(locale.localization),
+                    DropdownButton<Locale>(
+                      value: state.locale,
+                      onChanged: (locale) =>
+                          bloc.add(UpdateLocaleEvent(locale)),
+                      items: AppLocalizations.supportedLocales
+                          .map(
+                            (lcl) => DropdownMenuItem(
+                              value: lcl,
+                              child: Text(lcl.languageCode),
+                            ),
+                          )
+                          .toList(),
+                    ),
+                  ],
+                ),
+              ],
+            );
+          },
         ),
       ),
     );

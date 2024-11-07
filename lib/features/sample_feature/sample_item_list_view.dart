@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:surapp_flutter/core/localization/extension.dart';
 import 'package:surapp_flutter/features/sample_feature/sample_item_list_view_route.dart';
 
 import 'sample_item.dart';
@@ -18,7 +19,7 @@ class SampleItemListView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Sample Items'),
+        title: Text(context.locale.homeTitle),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
@@ -33,7 +34,7 @@ class SampleItemListView extends StatelessWidget {
           final item = items[index];
 
           return ListTile(
-              title: Text('SampleItem ${item.id}'),
+              title: Text(context.locale.sampleItem(item.id)),
               leading: const CircleAvatar(
                 foregroundImage: AssetImage('assets/images/flutter_logo.png'),
               ),

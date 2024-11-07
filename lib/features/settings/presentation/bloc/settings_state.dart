@@ -1,10 +1,11 @@
 part of 'settings_bloc.dart';
 
-class SettingsState extends Equatable {
-  const SettingsState({this.themeMode});
+@freezed
+class SettingsState with _$SettingsState {
+  const factory SettingsState({
+    ThemeMode? themeMode,
+    Locale? locale,
+  }) = _SettingsState;
 
-  final ThemeMode? themeMode;
-
-  @override
-  List<Object?> get props => [themeMode];
+  const SettingsState._();
 }

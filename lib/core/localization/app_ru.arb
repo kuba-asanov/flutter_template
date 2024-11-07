@@ -1,3 +1,17 @@
 {
-  "appTitle": "surapp_flutter"
+  "homeTitle": "Образцы предметов",
+  "settings": "Настройки",
+  "systemTheme": "Системная тема",
+  "lightTheme": "Светлая тема",
+  "darkTheme": "Темная тема",
+  "sampleItem": "Образец предмета {number}",
+  "@sampleItem": {
+    "placeholders": {
+      "number": {
+        "type": "num"
+      }
+    }
+  },
+  "theme": "Тема",
+  "localization": "Локализация"
 }

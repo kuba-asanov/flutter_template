@@ -1,17 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:surapp_flutter/core/storage/local_storage.dart';
 
-/// A service that stores and retrieves user settings.
-///
-/// By default, this class does not persist user settings. If you'd like to
-/// persist the user settings locally, use the shared_preferences package. If
-/// you'd like to store settings on a web server, use the http package.
 class SettingsService {
-  /// Loads the User's preferred ThemeMode from local or remote storage.
-  Future<ThemeMode> themeMode() async => ThemeMode.system;
+  SettingsService({required this.localStorage});
 
-  /// Persists the user's preferred ThemeMode to local or remote storage.
-  Future<void> updateThemeMode(ThemeMode theme) async {
-    // Use the shared_preferences package to persist settings locally or the
-    // http package to persist settings over the network.
+  final LocalStorage localStorage;
+
+  Future<ThemeMode> themeMode() async {
+    final themeModeName = localStorage.getString(LocalStorageKey.themeMode);
+    return ThemeMode.values.firstWhere(
+      (element) => element.name == themeModeName,
+      orElse: () => ThemeMode.system,
+    );
   }
+
+  Future<void> updateThemeMode(ThemeMode theme) =>
+      localStorage.setString(LocalStorageKey.themeMode, theme.name);
+
+  Future<Locale> locale() async {
+    final locale = localStorage.getString(LocalStorageKey.locale);
+    return Locale(locale ?? "ru");
+  }
+
+  Future<void> updateLocale(Locale locale) =>
+      localStorage.setString(LocalStorageKey.locale, locale.languageCode);
 }

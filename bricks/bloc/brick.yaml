@@ -10,3 +10,7 @@ vars:
     type: string
     default: One
     prompt: Bloc name? ('One' by default)
+  isUseFreezed:
+    type: boolean
+    default: true
+    prompt: "Use freezed for state of bloc? (true by default) "
