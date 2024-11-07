@@ -39,5 +39,33 @@ flutter:
   generate: true
 
   assets:
-    # Add assets from the images directory to the application.
     - assets/images/
+
+  fonts:
+    - family: Inter
+      fonts:
+        - asset: assets/fonts/Inter_18pt-Black.ttf
+        - asset: assets/fonts/Inter_18pt-BlackItalic.ttf
+          style: italic
+        - asset: assets/fonts/Inter_18pt-Bold.ttf
+        - asset: assets/fonts/Inter_18pt-BoldItalic.ttf
+          style: italic
+        - asset: assets/fonts/Inter_18pt-ExtraBold.ttf
+        - asset: assets/fonts/Inter_18pt-ExtraBoldItalic.ttf
+          style: italic
+        - asset: assets/fonts/Inter_18pt-ExtraLight.ttf
+        - asset: assets/fonts/Inter_18pt-ExtraLightItalic.ttf
+          style: italic
+        - asset: assets/fonts/Inter_18pt-Italic.ttf
+        - asset: assets/fonts/Inter_18pt-Light.ttf
+        - asset: assets/fonts/Inter_18pt-LightItalic.ttf
+          style: italic
+        - asset: assets/fonts/Inter_18pt-Medium.ttf
+        - asset: assets/fonts/Inter_18pt-MediumItalic.ttf
+        - asset: assets/fonts/Inter_18pt-Regular.ttf
+        - asset: assets/fonts/Inter_18pt-SemiBold.ttf
+        - asset: assets/fonts/Inter_18pt-SemiBoldItalic.ttf
+          style: italic
+        - asset: assets/fonts/Inter_18pt-Thin.ttf
+        - asset: assets/fonts/Inter_18pt-ThinItalic.ttf
+          style: italic
