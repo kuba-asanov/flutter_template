@@ -63,7 +63,7 @@ class CoreDiModule extends DiModuleAsync {
         ));
         dio.interceptors.addAll([
           LocaleInterceptor(
-            localeGetter: () => locale.languageCode.toUpperCase(),
+            localeGetter: locale.languageCode.toUpperCase,
           ),
           aliceDioAdapter,
         ]);
