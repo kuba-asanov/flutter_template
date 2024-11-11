@@ -10,10 +10,10 @@ import 'package:surapp_flutter/core/storage/local_storage.dart';
 import 'package:surapp_flutter/core/storage/local_storage_impl.dart';
 import 'package:surapp_flutter/core/storage/secure_storage.dart';
 import 'package:surapp_flutter/core/storage/secure_storage_impl.dart';
+import 'package:surapp_flutter/features/settings/data/settings_service.dart';
 import 'package:surapp_flutter/features/settings/domain/usecases/update_locale_usecase.dart';
 import 'package:surapp_flutter/features/settings/domain/usecases/update_theme_usecase.dart';
 import 'package:surapp_flutter/features/settings/presentation/bloc/settings_bloc.dart';
-import 'package:surapp_flutter/features/settings/data/settings_service.dart';
 import 'package:take_it/take_it.dart';
 
 const networkTimeout = Duration(seconds: 60);
