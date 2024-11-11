@@ -23,6 +23,9 @@ dependencies:
   freezed_annotation: ^2.4.4
   json_annotation: ^4.9.0
   flutter_secure_storage: ^4.2.1
+  dio: ^5.7.0
+  connectivity_plus: ^6.1.0
+  alice: ^0.4.2
 
 dev_dependencies:
   flutter_test:
