@@ -122,19 +122,15 @@ class AppTextStyles extends TextStyle {
         );
 
   const AppTextStyles._({
-    Color? color,
-    required FontWeight fontWeight,
-    required double fontSize,
+    super.color,
+    required FontWeight super.fontWeight,
+    required double super.fontSize,
     required double lineHeight,
-    double? letterSpacing,
+    super.letterSpacing,
   }) : super(
-          color: color,
-          fontWeight: fontWeight,
-          fontSize: fontSize,
           height: lineHeight / fontSize,
           fontFamily: defaultFontFamily,
           leadingDistribution: TextLeadingDistribution.even,
-          letterSpacing: letterSpacing,
         );
 
   static const defaultFontFamily = 'Inter';
