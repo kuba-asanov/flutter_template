@@ -3,6 +3,8 @@ include: package:flutter_lints/flutter.yaml
 analyzer:
   exclude:
     - "bricks/*/__brick__/**"
+  plugins:
+    - dart_code_metrics
   errors:
     missing_required_param: error
     missing_return: error
@@ -99,3 +101,53 @@ linter:
     - hash_and_equals
     - avoid_equals_and_hash_code_on_mutable_classes # avoid
     - avoid_null_checks_in_equality_operators
+
+dart_code_metrics:
+  # Игнорируем генерируемые файлы для проверок код-стайла + тесты
+  rules-exclude:
+    - ./**/*.g.dart
+    - ./**/*.freezed.dart
+    - ./**/generated/**
+    - test/**
+  metrics:
+    cyclomatic-complexity: 20
+    number-of-parameters: 4
+    maximum-nesting-level: 3
+  rules:
+    - avoid-cascade-after-if-null
+    - avoid-double-slash-imports
+    - avoid-duplicate-exports
+    - avoid-redundant-async
+    - avoid-unnecessary-conditionals
+    - avoid-unnecessary-type-assertions
+    - avoid-unnecessary-type-casts
+    - avoid-returning-widgets
+    - avoid-shrink-wrap-in-lists
+    - always-remove-listener
+    - binary-expression-operand-order
+    - double-literal-format
+    - list-all-equatable-fields
+    - no-boolean-literal-compare
+    - no-boolean-literal-compare
+    - no-empty-block
+    - no-equal-then-else
+    - no-object-declaration
+    - prefer-enums-by-name
+    - prefer-first
+    - prefer-last
+    - prefer-immediate-return
+    - prefer-match-file-name
+    # - prefer-moving-to-variable Проблема с copyWith, поэтому убрали
+    - prefer-conditional-expressions
+    - prefer-trailing-comma
+    - prefer-correct-edge-insets-constructor
+    - avoid-unrelated-type-assertions:
+        severity: error
+    - avoid-nested-conditional-expressions:
+        acceptable-level: 3
+    - avoid-dynamic:
+        severity: error
+    - avoid-non-null-assertion:
+        severity: error
+    - avoid-unused-parameters:
+        severity: error

@@ -1,4 +1,6 @@
 import 'package:alice/alice.dart';
+import 'package:alice/model/alice_configuration.dart';
+import 'package:alice_dio/alice_dio_adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -34,18 +36,25 @@ class CoreDiModule extends DiModuleAsync {
       /// Data
       ///
       ..registerSingleton<SettingsService>(
-          SettingsService(localStorage: get<LocalStorage>()));
+        SettingsService(localStorage: get<LocalStorage>()),
+      );
 
     final themeMode = await get<SettingsService>().themeMode();
     final locale = await get<SettingsService>().locale();
 
     /// Network
     ///
+    final aliceDioAdapter = AliceDioAdapter();
+
     it
-      ..registerSingleton(Alice(
-        showNotification: false,
-        showInspectorOnShake: true,
-      ))
+      ..registerFactory(
+        () => Alice(
+          configuration: AliceConfiguration(
+            showNotification: false,
+            showInspectorOnShake: true,
+          ),
+        )..addAdapter(aliceDioAdapter),
+      )
       ..registerFactory(() {
         final dio = Dio(BaseOptions(
           baseUrl: AppUrls.baseUrl,
@@ -54,8 +63,9 @@ class CoreDiModule extends DiModuleAsync {
         ));
         dio.interceptors.addAll([
           LocaleInterceptor(
-              localeGetter: () => locale.languageCode.toUpperCase()),
-          get<Alice>().getDioInterceptor(),
+            localeGetter: () => locale.languageCode.toUpperCase(),
+          ),
+          aliceDioAdapter,
         ]);
         if (kDebugMode) {
           dio.interceptors.add(
@@ -85,9 +95,11 @@ class CoreDiModule extends DiModuleAsync {
       /// Domain
       ///
       ..registerFactory<UpdateThemeUsecase>(
-          () => UpdateThemeUsecase(get<SettingsService>()))
+        () => UpdateThemeUsecase(get<SettingsService>()),
+      )
       ..registerFactory<UpdateLocaleUsecase>(
-          () => UpdateLocaleUsecase(get<SettingsService>()));
+        () => UpdateLocaleUsecase(get<SettingsService>()),
+      );
 
     /// Presentation
     ///

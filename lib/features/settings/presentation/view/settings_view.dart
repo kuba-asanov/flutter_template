@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:surapp_flutter/common/ui_kit/app_text_styles.dart';
-import 'package:surapp_flutter/core/localization/extension.dart';
 import 'package:surapp_flutter/core/localization/generated/app_localization.dart';
+import 'package:surapp_flutter/core/localization/locale_extension.dart';
 import 'package:surapp_flutter/features/settings/presentation/bloc/settings_bloc.dart';
 
 class SettingsView extends StatelessWidget {
@@ -51,7 +51,7 @@ class SettingsView extends StatelessWidget {
                         DropdownMenuItem(
                           value: ThemeMode.dark,
                           child: Text(locale.darkTheme),
-                        )
+                        ),
                       ],
                     ),
                   ],

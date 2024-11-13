@@ -7,8 +7,8 @@ import 'package:surapp_flutter/core/navigation/app_router.dart';
 import 'package:surapp_flutter/features/settings/presentation/bloc/settings_bloc.dart';
 import 'package:take_it/take_it.dart';
 
-class MyApp extends StatelessWidget {
-  const MyApp({
+class App extends StatelessWidget {
+  const App({
     super.key,
   });
 
@@ -18,20 +18,21 @@ class MyApp extends StatelessWidget {
       createModule: CoreDiModule.new,
       builder: (context, module) {
         return BlocBuilder<SettingsBloc, SettingsState>(
-            bloc: module.get<SettingsBloc>(),
-            builder: (context, state) {
-              return MaterialApp.router(
-                localizationsDelegates: AppLocalizations.localizationsDelegates,
-                supportedLocales: AppLocalizations.supportedLocales,
-                locale: state.locale,
-                theme: ThemeData(
-                  fontFamily: AppTextStyles.defaultFontFamily,
-                ),
-                darkTheme: ThemeData.dark(),
-                themeMode: state.themeMode,
-                routerConfig: AppRouter.router(),
-              );
-            });
+          bloc: module.get<SettingsBloc>(),
+          builder: (context, state) {
+            return MaterialApp.router(
+              localizationsDelegates: AppLocalizations.localizationsDelegates,
+              supportedLocales: AppLocalizations.supportedLocales,
+              locale: state.locale,
+              theme: ThemeData(
+                fontFamily: AppTextStyles.defaultFontFamily,
+              ),
+              darkTheme: ThemeData.dark(),
+              themeMode: state.themeMode,
+              routerConfig: AppRouter.router(),
+            );
+          },
+        );
       },
     );
   }

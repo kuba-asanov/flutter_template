@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:surapp_flutter/common/app_assets/app_assets.dart';
-import 'package:surapp_flutter/core/localization/extension.dart';
+import 'package:surapp_flutter/core/localization/locale_extension.dart';
 import 'package:surapp_flutter/features/sample_feature/sample_item_list_view_route.dart';
 
 import 'sample_item.dart';
@@ -35,11 +35,12 @@ class SampleItemListView extends StatelessWidget {
           final item = items[index];
 
           return ListTile(
-              title: Text(context.locale.sampleItem(item.id)),
-              leading: CircleAvatar(
-                foregroundImage: AssetImage(AppAssets.image.flutterLogo),
-              ),
-              onTap: () => router.openDetials(context));
+            title: Text(context.locale.sampleItem(item.id)),
+            leading: CircleAvatar(
+              foregroundImage: AssetImage(AppAssets.image.flutterLogo),
+            ),
+            onTap: () => router.openDetials(context),
+          );
         },
       ),
     );

@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:surapp_flutter/common/network/network_failure.dart';
+import 'package:surapp_flutter/common/network/app_failure.dart';
 import 'package:surapp_flutter/common/network/server_error_body.dart';
 import 'package:surapp_flutter/common/utils/extended_error.dart';
 

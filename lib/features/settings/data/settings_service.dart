@@ -8,10 +8,7 @@ class SettingsService {
 
   Future<ThemeMode> themeMode() async {
     final themeModeName = localStorage.getString(LocalStorageKey.themeMode);
-    return ThemeMode.values.firstWhere(
-      (element) => element.name == themeModeName,
-      orElse: () => ThemeMode.system,
-    );
+    return ThemeMode.values.byName(themeModeName ?? ThemeMode.system.name);
   }
 
   Future<void> updateThemeMode(ThemeMode theme) =>
