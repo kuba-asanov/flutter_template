@@ -1,7 +1,7 @@
 import 'package:dio/dio.dart';
-import 'package:surapp_flutter/common/network/app_failure.dart';
-import 'package:surapp_flutter/common/network/server_error_body.dart';
-import 'package:surapp_flutter/common/utils/extended_error.dart';
+import 'package:flutter_template/common/network/app_failure.dart';
+import 'package:flutter_template/common/network/server_error_body.dart';
+import 'package:flutter_template/common/utils/extended_error.dart';
 
 abstract interface class NetworkErrorHandler {
   Future<T> tryCall<T>(Future<T> Function() call);

@@ -1,4 +1,4 @@
-import 'package:surapp_flutter/common/utils/data_parser.dart';
+import 'package:flutter_template/common/utils/data_parser.dart';
 
 abstract class SecureStorage {
   Future<String?> getValue(SecureStorageKey key);

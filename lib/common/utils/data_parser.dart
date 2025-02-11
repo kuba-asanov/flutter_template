@@ -1,7 +1,7 @@
 // ignore_for_file: avoid-dynamic
 
 import 'package:flutter/material.dart';
-import 'package:surapp_flutter/common/utils/extended_error.dart';
+import 'package:flutter_template/common/utils/extended_error.dart';
 
 abstract class DataParser<T> {
   T parse(dynamic data);

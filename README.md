@@ -1,4 +1,4 @@
-# surapp_flutter
+# flutter_template
 
 A new Flutter project.
 

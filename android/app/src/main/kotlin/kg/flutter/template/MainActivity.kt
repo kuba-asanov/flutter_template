@@ -1,4 +1,4 @@
-package com.example.surapp_flutter
+package kg.flutter.template
 
 import io.flutter.embedding.android.FlutterActivity
 

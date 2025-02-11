@@ -2,8 +2,8 @@ import 'package:equatable/equatable.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:surapp_flutter/features/settings/domain/usecases/update_locale_usecase.dart';
-import 'package:surapp_flutter/features/settings/domain/usecases/update_theme_usecase.dart';
+import 'package:flutter_template/features/settings/domain/usecases/update_locale_usecase.dart';
+import 'package:flutter_template/features/settings/domain/usecases/update_theme_usecase.dart';
 
 part 'settings_event.dart';
 part 'settings_state.dart';

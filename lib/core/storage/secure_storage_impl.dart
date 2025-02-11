@@ -1,9 +1,9 @@
 import 'dart:convert';
 
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
-import 'package:surapp_flutter/common/utils/data_parser.dart';
-import 'package:surapp_flutter/common/utils/try_or_utils.dart';
-import 'package:surapp_flutter/core/storage/secure_storage.dart';
+import 'package:flutter_template/common/utils/data_parser.dart';
+import 'package:flutter_template/common/utils/try_or_utils.dart';
+import 'package:flutter_template/core/storage/secure_storage.dart';
 
 class SecureStorageImpl implements SecureStorage {
   final FlutterSecureStorage _storage = const FlutterSecureStorage(

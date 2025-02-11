@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:surapp_flutter/common/app_assets/app_assets.dart';
-import 'package:surapp_flutter/core/localization/locale_extension.dart';
-import 'package:surapp_flutter/features/sample_feature/sample_item_list_view_route.dart';
+import 'package:flutter_template/common/app_assets/app_assets.dart';
+import 'package:flutter_template/core/localization/locale_extension.dart';
+import 'package:flutter_template/features/sample_feature/sample_item_list_view_route.dart';
 
 import 'sample_item.dart';
 

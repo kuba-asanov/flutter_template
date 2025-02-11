@@ -1,5 +1,5 @@
-import 'package:surapp_flutter/common/app_assets/image_app_assets.dart';
-import 'package:surapp_flutter/common/app_assets/svg_app_assets.dart';
+import 'package:flutter_template/common/app_assets/image_app_assets.dart';
+import 'package:flutter_template/common/app_assets/svg_app_assets.dart';
 
 class AppAssets {
   AppAssets._();

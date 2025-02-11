@@ -1,6 +1,6 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
-import 'package:surapp_flutter/features/settings/data/settings_service.dart';
+import 'package:flutter_template/features/settings/data/settings_service.dart';
 
 class UpdateLocaleUsecase {
   UpdateLocaleUsecase(SettingsService settingsService)

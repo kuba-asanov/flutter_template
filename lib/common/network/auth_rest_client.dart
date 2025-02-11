@@ -1,8 +1,8 @@
 import 'package:dio/dio.dart';
-import 'package:surapp_flutter/common/network/auth_interceptor.dart';
-import 'package:surapp_flutter/common/network/network_error_handler.dart';
-import 'package:surapp_flutter/common/network/rest_client.dart';
-import 'package:surapp_flutter/core/storage/secure_storage.dart';
+import 'package:flutter_template/common/network/auth_interceptor.dart';
+import 'package:flutter_template/common/network/network_error_handler.dart';
+import 'package:flutter_template/common/network/rest_client.dart';
+import 'package:flutter_template/core/storage/secure_storage.dart';
 
 class AuthRestClient extends RestClient {
   AuthRestClient(

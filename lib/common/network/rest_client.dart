@@ -1,10 +1,10 @@
 import 'dart:async';
 
 import 'package:dio/dio.dart';
-import 'package:surapp_flutter/common/network/network_error_handler.dart';
-import 'package:surapp_flutter/common/network/network_info.dart';
-import 'package:surapp_flutter/common/utils/data_parser.dart';
-import 'package:surapp_flutter/common/utils/extended_error.dart';
+import 'package:flutter_template/common/network/network_error_handler.dart';
+import 'package:flutter_template/common/network/network_info.dart';
+import 'package:flutter_template/common/utils/data_parser.dart';
+import 'package:flutter_template/common/utils/extended_error.dart';
 
 abstract class RestClient {
   RestClient(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:surapp_flutter/core/storage/local_storage.dart';
+import 'package:flutter_template/core/storage/local_storage.dart';
 
 class SettingsService {
   SettingsService({required this.localStorage});
