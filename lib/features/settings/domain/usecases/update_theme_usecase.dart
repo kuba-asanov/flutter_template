@@ -1,14 +1,15 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
+import 'package:flutter_template/common/utils/base_usecase.dart';
 import 'package:flutter_template/features/settings/data/settings_service.dart';
 
-class UpdateThemeUsecase {
-  UpdateThemeUsecase(SettingsService settingsService)
-      : _settingsService = settingsService;
+class UpdateThemeUsecase extends BaseUseCase<void, ThemeMode> {
+  UpdateThemeUsecase(SettingsService settingsService) : _settingsService = settingsService;
 
   final SettingsService _settingsService;
 
-  FutureOr<void> invoke(ThemeMode theme) {
-    return _settingsService.updateThemeMode(theme);
+  @override
+  FutureOr<void> makeRequest(ThemeMode params) {
+    return _settingsService.updateThemeMode(params);
   }
 }
