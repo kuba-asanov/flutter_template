@@ -1,4 +1,4 @@
-import 'package:common_base/exports/equatable.dart';
+import 'package:equatable/equatable.dart';
 
 class SomeData with EquatableMixin {
   const SomeData();

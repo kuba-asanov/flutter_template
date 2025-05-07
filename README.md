@@ -12,6 +12,18 @@ For help getting started with Flutter development, view the
 [online documentation](https://flutter.dev/docs), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
 
+### Tools
+
+В проекте используется fvm, все bash команды нужно через fvm запускать чтобы все разрабы юзали один и тот же flutter версию в этом проекте.
+Есть готовые команды в [tools/idea_scripts](tools/idea_scripts), можно запускать вот так:
+```
+cd tools/idea_scripts 
+sh generate.sh   
+```
+
+Так же в проекте есть шаблоны(bricks) `feature` `bloc` [bricks/feature/README.md](bricks/feature/README.md)
+c помошью которых можно создавать фичи и блоки автоматом с кодгеном
+
 ## Assets
 
 The `assets` directory houses images, fonts, and any other files you want to

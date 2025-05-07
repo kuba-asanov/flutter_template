@@ -1,3 +1,4 @@
+// dart format width=80
 // coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint
@@ -9,123 +10,27 @@ part of 'settings_bloc.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$SettingsState {
-  ThemeMode? get themeMode => throw _privateConstructorUsedError;
-  Locale? get locale => throw _privateConstructorUsedError;
+  ThemeMode? get themeMode;
+  Locale? get locale;
 
   /// Create a copy of SettingsState
   /// with the given fields replaced by the non-null parameter values.
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
   $SettingsStateCopyWith<SettingsState> get copyWith =>
-      throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SettingsStateCopyWith<$Res> {
-  factory $SettingsStateCopyWith(
-          SettingsState value, $Res Function(SettingsState) then) =
-      _$SettingsStateCopyWithImpl<$Res, SettingsState>;
-  @useResult
-  $Res call({ThemeMode? themeMode, Locale? locale});
-}
-
-/// @nodoc
-class _$SettingsStateCopyWithImpl<$Res, $Val extends SettingsState>
-    implements $SettingsStateCopyWith<$Res> {
-  _$SettingsStateCopyWithImpl(this._value, this._then);
-
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? themeMode = freezed,
-    Object? locale = freezed,
-  }) {
-    return _then(_value.copyWith(
-      themeMode: freezed == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode?,
-      locale: freezed == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as Locale?,
-    ) as $Val);
-  }
-}
-
-/// @nodoc
-abstract class _$$SettingsStateImplCopyWith<$Res>
-    implements $SettingsStateCopyWith<$Res> {
-  factory _$$SettingsStateImplCopyWith(
-          _$SettingsStateImpl value, $Res Function(_$SettingsStateImpl) then) =
-      __$$SettingsStateImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({ThemeMode? themeMode, Locale? locale});
-}
-
-/// @nodoc
-class __$$SettingsStateImplCopyWithImpl<$Res>
-    extends _$SettingsStateCopyWithImpl<$Res, _$SettingsStateImpl>
-    implements _$$SettingsStateImplCopyWith<$Res> {
-  __$$SettingsStateImplCopyWithImpl(
-      _$SettingsStateImpl _value, $Res Function(_$SettingsStateImpl) _then)
-      : super(_value, _then);
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? themeMode = freezed,
-    Object? locale = freezed,
-  }) {
-    return _then(_$SettingsStateImpl(
-      themeMode: freezed == themeMode
-          ? _value.themeMode
-          : themeMode // ignore: cast_nullable_to_non_nullable
-              as ThemeMode?,
-      locale: freezed == locale
-          ? _value.locale
-          : locale // ignore: cast_nullable_to_non_nullable
-              as Locale?,
-    ));
-  }
-}
-
-/// @nodoc
-
-class _$SettingsStateImpl extends _SettingsState {
-  const _$SettingsStateImpl({this.themeMode, this.locale}) : super._();
-
-  @override
-  final ThemeMode? themeMode;
-  @override
-  final Locale? locale;
-
-  @override
-  String toString() {
-    return 'SettingsState(themeMode: $themeMode, locale: $locale)';
-  }
+      _$SettingsStateCopyWithImpl<SettingsState>(
+          this as SettingsState, _$identity);
 
   @override
   bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$SettingsStateImpl &&
+            other is SettingsState &&
             (identical(other.themeMode, themeMode) ||
                 other.themeMode == themeMode) &&
             (identical(other.locale, locale) || other.locale == locale));
@@ -134,29 +39,125 @@ class _$SettingsStateImpl extends _SettingsState {
   @override
   int get hashCode => Object.hash(runtimeType, themeMode, locale);
 
+  @override
+  String toString() {
+    return 'SettingsState(themeMode: $themeMode, locale: $locale)';
+  }
+}
+
+/// @nodoc
+abstract mixin class $SettingsStateCopyWith<$Res> {
+  factory $SettingsStateCopyWith(
+          SettingsState value, $Res Function(SettingsState) _then) =
+      _$SettingsStateCopyWithImpl;
+  @useResult
+  $Res call({ThemeMode? themeMode, Locale? locale});
+}
+
+/// @nodoc
+class _$SettingsStateCopyWithImpl<$Res>
+    implements $SettingsStateCopyWith<$Res> {
+  _$SettingsStateCopyWithImpl(this._self, this._then);
+
+  final SettingsState _self;
+  final $Res Function(SettingsState) _then;
+
   /// Create a copy of SettingsState
   /// with the given fields replaced by the non-null parameter values.
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? themeMode = freezed,
+    Object? locale = freezed,
+  }) {
+    return _then(_self.copyWith(
+      themeMode: freezed == themeMode
+          ? _self.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode?,
+      locale: freezed == locale
+          ? _self.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _SettingsState extends SettingsState {
+  const _SettingsState({this.themeMode, this.locale}) : super._();
+
+  @override
+  final ThemeMode? themeMode;
+  @override
+  final Locale? locale;
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
+  @override
   @JsonKey(includeFromJson: false, includeToJson: false)
+  @pragma('vm:prefer-inline')
+  _$SettingsStateCopyWith<_SettingsState> get copyWith =>
+      __$SettingsStateCopyWithImpl<_SettingsState>(this, _$identity);
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _SettingsState &&
+            (identical(other.themeMode, themeMode) ||
+                other.themeMode == themeMode) &&
+            (identical(other.locale, locale) || other.locale == locale));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, themeMode, locale);
+
+  @override
+  String toString() {
+    return 'SettingsState(themeMode: $themeMode, locale: $locale)';
+  }
+}
+
+/// @nodoc
+abstract mixin class _$SettingsStateCopyWith<$Res>
+    implements $SettingsStateCopyWith<$Res> {
+  factory _$SettingsStateCopyWith(
+          _SettingsState value, $Res Function(_SettingsState) _then) =
+      __$SettingsStateCopyWithImpl;
+  @override
+  @useResult
+  $Res call({ThemeMode? themeMode, Locale? locale});
+}
+
+/// @nodoc
+class __$SettingsStateCopyWithImpl<$Res>
+    implements _$SettingsStateCopyWith<$Res> {
+  __$SettingsStateCopyWithImpl(this._self, this._then);
+
+  final _SettingsState _self;
+  final $Res Function(_SettingsState) _then;
+
+  /// Create a copy of SettingsState
+  /// with the given fields replaced by the non-null parameter values.
   @override
   @pragma('vm:prefer-inline')
-  _$$SettingsStateImplCopyWith<_$SettingsStateImpl> get copyWith =>
-      __$$SettingsStateImplCopyWithImpl<_$SettingsStateImpl>(this, _$identity);
+  $Res call({
+    Object? themeMode = freezed,
+    Object? locale = freezed,
+  }) {
+    return _then(_SettingsState(
+      themeMode: freezed == themeMode
+          ? _self.themeMode
+          : themeMode // ignore: cast_nullable_to_non_nullable
+              as ThemeMode?,
+      locale: freezed == locale
+          ? _self.locale
+          : locale // ignore: cast_nullable_to_non_nullable
+              as Locale?,
+    ));
+  }
 }
 
-abstract class _SettingsState extends SettingsState {
-  const factory _SettingsState(
-      {final ThemeMode? themeMode, final Locale? locale}) = _$SettingsStateImpl;
-  const _SettingsState._() : super._();
-
-  @override
-  ThemeMode? get themeMode;
-  @override
-  Locale? get locale;
-
-  /// Create a copy of SettingsState
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$SettingsStateImplCopyWith<_$SettingsStateImpl> get copyWith =>
-      throw _privateConstructorUsedError;
-}
+// dart format on

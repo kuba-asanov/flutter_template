@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
 import 'package:flutter_template/features/sample_feature/sample_item_list_view_route.dart';
+import 'package:go_router/go_router.dart';
 
 class AppRouter {
   AppRouter._();

@@ -1,4 +1,4 @@
 {
-    "bloc": "/Users/k.asanov/Documents/GitHub/flutter_template/bricks/bloc",
-    "feature": "/Users/k.asanov/Documents/GitHub/flutter_template/bricks/feature"
+    "bloc": "./bricks/bloc",
+    "feature": "./bricks/feature"
 }

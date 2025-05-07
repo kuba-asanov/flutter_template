@@ -3,7 +3,6 @@ import 'package:alice/model/alice_configuration.dart';
 import 'package:alice_dio/alice_dio_adapter.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_template/common/app_urls.dart';
 import 'package:flutter_template/common/network/auth_rest_client.dart';
 import 'package:flutter_template/common/network/locale_interceptor.dart';
@@ -16,6 +15,7 @@ import 'package:flutter_template/features/settings/data/settings_service.dart';
 import 'package:flutter_template/features/settings/domain/usecases/update_locale_usecase.dart';
 import 'package:flutter_template/features/settings/domain/usecases/update_theme_usecase.dart';
 import 'package:flutter_template/features/settings/presentation/bloc/settings_bloc.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:take_it/take_it.dart';
 
 const networkTimeout = Duration(seconds: 60);

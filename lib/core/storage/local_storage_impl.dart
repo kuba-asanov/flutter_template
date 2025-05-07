@@ -1,5 +1,5 @@
-import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter_template/core/storage/local_storage.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class LocalStorageImpl implements LocalStorage {
   const LocalStorageImpl(this._preferences);

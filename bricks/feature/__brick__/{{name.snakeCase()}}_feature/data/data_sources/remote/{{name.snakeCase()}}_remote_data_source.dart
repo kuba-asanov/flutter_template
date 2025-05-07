@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:network/data_parser.dart';
-import 'package:common_base/network/auth_rest_client.dart';
+import 'package:flutter_template/common/network/auth_rest_client.dart';
+import 'package:flutter_template/common/utils/data_parser.dart';
 import '../../models/some_data_response/some_data_response.dart';
 
 abstract interface class {{name.pascalCase()}}RemoteDataSource {
@@ -18,7 +18,7 @@ class {{name.pascalCase()}}RemoteDataSourceImpl
   @override
   FutureOr<SomeDataResponse> getSomeData() {
     return _restClientService.get(
-      'StreamUrls.someData',
+      'AppUrls.someData',
       parser: ObjectParser(SomeDataResponse.fromJson),
     );
   }
