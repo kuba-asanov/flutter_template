@@ -25,3 +25,20 @@ A few resources to get you started if this is your first brick template:
 [5]: https://youtu.be/qjA0JFiPMnQ
 [6]: https://youtu.be/o8B1EfcUisw
 [7]: https://youtu.be/LXhgiF5HiQg
+
+## Using
+
+Run this command in your root
+```
+# 🎯 Activate from https://pub.dev
+dart pub global activate mason_cli
+
+# 📦 Install your bricks
+mason get
+```
+
+Go to folder in terminal where you want to create `bloc` and run commamd `make`
+```
+cd lib/feature/presentation
+mason make bloc
+```

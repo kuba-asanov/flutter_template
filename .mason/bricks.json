@@ -1,4 +1,1 @@
-{
-    "bloc": "./bricks/bloc",
-    "feature": "./bricks/feature"
-}
+{"bloc":"./bricks/bloc","feature":"./bricks/feature"}
