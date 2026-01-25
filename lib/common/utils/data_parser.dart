@@ -27,7 +27,7 @@ class ListParser<T> implements DataParser<List<T>> {
               .map((json) => _converter(json as Map<String, dynamic>)));
     } catch (e, s) {
       debugPrint("$e, $s");
-      throw const ParseError();
+      throw ParseError(originalError: e, stackTrace: s);
     }
   }
 }
@@ -43,7 +43,7 @@ class ObjectParser<T> implements DataParser<T> {
       return _converter(data as Map<String, dynamic>);
     } catch (e, s) {
       debugPrint("$e, $s");
-      throw const ParseError();
+      throw ParseError(originalError: e, stackTrace: s);
     }
   }
 }
@@ -59,7 +59,7 @@ class RawParser<T> implements DataParser<T> {
       return _converter(data as String);
     } catch (e, s) {
       debugPrint("$e, $s");
-      throw const ParseError();
+      throw ParseError(originalError: e, stackTrace: s);
     }
   }
 }

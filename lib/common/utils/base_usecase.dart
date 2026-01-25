@@ -2,13 +2,13 @@ import 'dart:async';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter_template/common/network/app_failure.dart';
+import 'package:flutter_template/common/utils/logger.dart';
 import 'package:flutter_template/common/utils/result.dart';
 import 'package:flutter_template/common/utils/usecase_error_converter.dart';
 
 abstract class BaseUseCase<T, P> {
   const BaseUseCase({
-    UseCaseErrorConverter<AppFailure> errorConverter =
-        const AppFailureUseCaseErrorParser(),
+    UseCaseErrorConverter<AppFailure> errorConverter = const AppFailureUseCaseErrorParser(),
   }) : _errorConverter = errorConverter;
 
   final UseCaseErrorConverter<AppFailure> _errorConverter;
@@ -30,6 +30,7 @@ abstract class BaseUseCase<T, P> {
   }
 
   AppFailure _convertError(Object error, StackTrace stackTrace) {
+    logger.e("$error, $stackTrace");
     return _errorConverter.convert(error, stackTrace);
   }
 
@@ -39,8 +40,7 @@ abstract class BaseUseCase<T, P> {
 
 abstract class BaseSyncUseCase<T, P> {
   const BaseSyncUseCase({
-    UseCaseErrorConverter<AppFailure> errorConverter =
-        const AppFailureUseCaseErrorParser(),
+    UseCaseErrorConverter<AppFailure> errorConverter = const AppFailureUseCaseErrorParser(),
   }) : _errorConverter = errorConverter;
 
   final UseCaseErrorConverter<AppFailure> _errorConverter;
@@ -62,6 +62,7 @@ abstract class BaseSyncUseCase<T, P> {
   }
 
   AppFailure _convertError(Object error, StackTrace stackTrace) {
+    logger.e("$error, $stackTrace");
     return _errorConverter.convert(error, stackTrace);
   }
 
@@ -70,7 +71,11 @@ abstract class BaseSyncUseCase<T, P> {
 }
 
 abstract class BaseStreamUseCase<T, P> {
-  const BaseStreamUseCase();
+  const BaseStreamUseCase({
+    UseCaseErrorConverter<AppFailure> errorConverter = const AppFailureUseCaseErrorParser(),
+  }) : _errorConverter = errorConverter;
+
+  final UseCaseErrorConverter<AppFailure> _errorConverter;
 
   Stream<Result<AppFailure, T>> invoke(P params) {
     final source = getSourceStream(params);
@@ -82,7 +87,7 @@ abstract class BaseStreamUseCase<T, P> {
         },
         handleError: (error, trace, sink) {
           try {
-            sink.add(Result.failure(convertError(error, trace)));
+            sink.add(Result.failure(_convertError(error, trace)));
           } catch (e, st) {
             sink.addError(e, st);
           }
@@ -91,8 +96,10 @@ abstract class BaseStreamUseCase<T, P> {
     );
   }
 
-  @protected
-  AppFailure convertError(Object error, StackTrace stackTrace);
+  AppFailure _convertError(Object error, StackTrace stackTrace) {
+    logger.e("$error, $stackTrace");
+    return _errorConverter.convert(error, stackTrace);
+  }
 
   @protected
   Stream<T> getSourceStream(P params);

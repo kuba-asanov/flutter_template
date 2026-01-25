@@ -1,3 +1,5 @@
+import 'package:flutter/foundation.dart';
+
 /// Class for wrapping result of a function so it can return 2 values.
 ///
 /// Commonly used to get rid of try..catch clauses and return either failure
@@ -34,6 +36,7 @@ sealed class Result<F, V> {
   TResult? onFailure<TResult>(TResult Function(F failure) onFailure);
 }
 
+@immutable
 class _SuccessResult<F, V> implements Result<F, V> {
   const _SuccessResult(this._value);
 
@@ -69,6 +72,7 @@ class _SuccessResult<F, V> implements Result<F, V> {
   bool get isSuccess => true;
 }
 
+@immutable
 class _FailureResult<F, V> implements Result<F, V> {
   const _FailureResult(this._failure);
 
