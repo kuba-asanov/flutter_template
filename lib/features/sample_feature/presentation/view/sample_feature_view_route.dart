@@ -6,7 +6,7 @@ import 'package:flutter_template/features/sample_feature/presentation/bloc/sampl
 import 'package:flutter_template/features/sample_feature/presentation/view/sample_feature_screen.dart';
 import 'package:flutter_template/features/settings/presentation/view/settings_view_route.dart';
 import 'package:go_router/go_router.dart';
-import 'package:take_it/take_it.dart';
+import 'package:scoped_di/scoped_di.dart';
 
 class SampleFeatureViewRoute extends GoRoute {
   SampleFeatureViewRoute()

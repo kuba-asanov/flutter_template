@@ -15,8 +15,8 @@ import 'package:flutter_template/features/settings/data/settings_service.dart';
 import 'package:flutter_template/features/settings/domain/usecases/update_locale_usecase.dart';
 import 'package:flutter_template/features/settings/domain/usecases/update_theme_usecase.dart';
 import 'package:flutter_template/features/settings/presentation/bloc/settings_bloc.dart';
+import 'package:scoped_di/scoped_di.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:take_it/take_it.dart';
 
 const networkTimeout = Duration(seconds: 60);
 
@@ -56,11 +56,13 @@ class CoreDiModule extends DiModuleAsync {
         )..addAdapter(aliceDioAdapter),
       )
       ..registerFactory(() {
-        final dio = Dio(BaseOptions(
-          baseUrl: AppUrls.baseUrl,
-          receiveTimeout: networkTimeout,
-          connectTimeout: networkTimeout,
-        ));
+        final dio = Dio(
+          BaseOptions(
+            baseUrl: AppUrls.baseUrl,
+            receiveTimeout: networkTimeout,
+            connectTimeout: networkTimeout,
+          ),
+        );
         dio.interceptors.addAll([
           LocaleInterceptor(
             localeGetter: locale.languageCode.toUpperCase,
@@ -99,20 +101,20 @@ class CoreDiModule extends DiModuleAsync {
       )
       ..registerFactory<UpdateLocaleUsecase>(
         () => UpdateLocaleUsecase(get<SettingsService>()),
-      );
+      )
 
-    /// Presentation
-    ///
-    it.registerLazySingleton<SettingsBloc>(
-      () {
-        return SettingsBloc(
-          themeMode: themeMode,
-          locale: locale,
-          updateThemeUsecase: get<UpdateThemeUsecase>(),
-          updateLocaleUsecase: get<UpdateLocaleUsecase>(),
-        );
-      },
-      dispose: (instance) => instance.close(),
-    );
+      /// Presentation
+      ///
+      ..registerLazySingleton<SettingsBloc>(
+        () {
+          return SettingsBloc(
+            themeMode: themeMode,
+            locale: locale,
+            updateThemeUsecase: get<UpdateThemeUsecase>(),
+            updateLocaleUsecase: get<UpdateLocaleUsecase>(),
+          );
+        },
+        dispose: (instance) => instance.close(),
+      );
   }
 }

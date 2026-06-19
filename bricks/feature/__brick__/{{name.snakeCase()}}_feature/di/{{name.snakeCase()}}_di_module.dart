@@ -1,4 +1,4 @@
-import 'package:take_it/take_it.dart';
+import 'package:scoped_di/scoped_di.dart';
 
 import '../data/data_sources/remote/{{name.snakeCase()}}_remote_data_source.dart';
 import '../data/repositories/{{name.snakeCase()}}_repository_impl.dart';

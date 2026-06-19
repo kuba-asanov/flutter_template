@@ -5,7 +5,7 @@ import 'package:flutter_template/core/core_di_module.dart';
 import 'package:flutter_template/core/localization/generated/app_localization.dart';
 import 'package:flutter_template/core/navigation/app_router.dart';
 import 'package:flutter_template/features/settings/presentation/bloc/settings_bloc.dart';
-import 'package:take_it/take_it.dart';
+import 'package:scoped_di/scoped_di.dart';
 
 class App extends StatelessWidget {
   const App({
