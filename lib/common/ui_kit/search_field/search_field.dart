@@ -8,10 +8,10 @@ import 'package:flutter_template/common/ui_kit/app_text_styles.dart';
 /// Компонент Search из DesignSystem
 class SearchField extends StatelessWidget {
   const SearchField({
-    super.key,
     required this.placeholder,
     required this.controller,
     required this.onChanged,
+    super.key,
     this.autofocus = false,
     this.keyboardType,
     this.prefixIconColor,
@@ -38,11 +38,11 @@ class SearchField extends StatelessWidget {
         inputFormatters: inputFormatters,
         decoration: InputDecoration(
           filled: true,
-          fillColor: Color(0xFFF2F2F7),
+          fillColor: const Color(0xFFF2F2F7),
           hintText: placeholder,
           suffixIcon: controller.text.isNotEmpty
               ? IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.clear,
                     color: Colors.black,
                     size: 20,
@@ -50,20 +50,21 @@ class SearchField extends StatelessWidget {
                   onPressed: () {
                     controller.clear();
                     onChanged(controller.text);
-                    FocusScope.of(context).requestFocus(FocusNode()); // remove keyboard
+                    FocusScope.of(context)
+                        .requestFocus(FocusNode()); // remove keyboard
                   },
                 )
               : null,
-          hintStyle: AppTextStyles.subtitle3().copyWith(
-            color: Color(0xFF8E8E93),
+          hintStyle: const AppTextStyles.subtitle3().copyWith(
+            color: const Color(0xFF8E8E93),
           ),
-          prefixIcon: Icon(Icons.search),
+          prefixIcon: const Icon(Icons.search),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(12),
-            borderSide: BorderSide(color: Colors.grey),
+            borderSide: const BorderSide(color: Colors.grey),
           ),
         ),
-        style: AppTextStyles.subtitle3(),
+        style: const AppTextStyles.subtitle3(),
         onEditingComplete: () {
           FocusScope.of(context).unfocus();
         },

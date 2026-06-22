@@ -1,7 +1,7 @@
 part of '{{name.snakeCase()}}_bloc.dart';
 
 {{#isUseFreezed}}@freezed
-class {{name.pascalCase()}}State with _${{name.pascalCase()}}State {
+abstract class {{name.pascalCase()}}State with _${{name.pascalCase()}}State {
   const factory {{name.pascalCase()}}State({
     required {{name.pascalCase()}}Status status,
     SomeData? someData,

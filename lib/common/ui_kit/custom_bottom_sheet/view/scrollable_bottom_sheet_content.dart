@@ -2,19 +2,19 @@ part of '../custom_bottom_sheet.dart';
 
 class ScrollableBottomSheetContent extends StatelessWidget {
   const ScrollableBottomSheetContent({
-    super.key,
     required this.title,
-    this.withIndicator = true,
     required this.showCloseButton,
     required this.child,
+    this.withIndicator = true,
     this.description,
     this.withoutTitleAndClose = false,
+    super.key,
   });
 
   final String title;
-  final bool withIndicator;
   final bool showCloseButton;
   final Widget child;
+  final bool withIndicator;
   final String? description;
   final bool withoutTitleAndClose;
 

@@ -122,10 +122,10 @@ class AppTextStyles extends TextStyle {
         );
 
   const AppTextStyles._({
-    super.color,
     required FontWeight super.fontWeight,
     required double super.fontSize,
     required double lineHeight,
+    super.color,
     super.letterSpacing,
   }) : super(
           height: lineHeight / fontSize,

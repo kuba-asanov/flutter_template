@@ -7,7 +7,7 @@ import 'package:flutter_template/core/storage/secure_storage.dart';
 
 class SecureStorageImpl implements SecureStorage {
   final FlutterSecureStorage _storage = const FlutterSecureStorage(
-    aOptions: AndroidOptions(encryptedSharedPreferences: true),
+    aOptions: AndroidOptions.defaultOptions,
   );
 
   @override

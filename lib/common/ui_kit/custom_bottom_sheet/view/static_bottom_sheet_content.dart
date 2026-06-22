@@ -2,22 +2,22 @@ part of '../custom_bottom_sheet.dart';
 
 class StaticBottomSheetContent extends StatelessWidget {
   const StaticBottomSheetContent({
-    super.key,
     required this.title,
     required this.withIndicator,
-    this.fixedHeight,
     required this.showCloseButton,
     required this.child,
+    this.fixedHeight,
     this.titleMaxLines = 1,
     this.description,
     this.withoutTitleAndClose = false,
+    super.key,
   });
 
   final String title;
   final bool withIndicator;
-  final double? fixedHeight;
   final bool showCloseButton;
   final Widget child;
+  final double? fixedHeight;
   final int titleMaxLines;
   final String? description;
   final bool withoutTitleAndClose;
@@ -27,7 +27,7 @@ class StaticBottomSheetContent extends StatelessWidget {
         borderRadius: const BorderRadius.vertical(top: Radius.circular(12)),
         child: Wrap(
           children: [
-            Container(
+            ColoredBox(
               color: AppColors.onSupplementary,
               child: Column(
                 mainAxisSize: MainAxisSize.min,

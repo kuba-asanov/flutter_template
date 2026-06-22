@@ -6,12 +6,16 @@ formatter:
 analyzer:
   exclude:
     - "bricks/*/__brick__/**"
+    - lib/**/*.graphql.dart
+    - lib/**/*.g.dart
+    - lib/**/*.freezed.dart
+    - lib/**/generated/**
   plugins:
     - dart_code_metrics
   errors:
     missing_required_param: error
     missing_return: error
-    dead_code: info
+    dead_code: warning
     unused_import: error
     avoid_relative_lib_imports: error
     always_use_package_imports: error
@@ -25,6 +29,83 @@ analyzer:
     duplicate_import: error
     unused_local_variable: error
     unused_field: error
+    todo: ignore
+    invalid_use_of_protected_member: error
+    avoid_empty_else: error
+    cancel_subscriptions: warning #error
+    close_sinks: warning #error
+    no_duplicate_case_values: error
+    throw_in_finally: error
+    always_declare_return_types: warning
+    always_put_required_named_parameters_first: warning
+    annotate_overrides: error
+    avoid_catches_without_on_clauses: warning #error
+    avoid_catching_errors: error
+    avoid_unnecessary_containers: warning
+    directives_ordering: warning
+    empty_catches: warning
+    empty_constructor_bodies: warning
+    only_throw_errors: warning #error
+    prefer_final_fields: warning
+    prefer_final_in_for_each: warning
+    prefer_final_locals: warning
+    prefer_if_null_operators: warning
+    prefer_initializing_formals: warning
+    prefer_is_empty: warning
+    prefer_is_not_empty: warning
+    prefer_is_not_operator: warning
+    prefer_iterable_whereType: warning
+    prefer_mixin: warning
+    prefer_null_aware_method_calls: warning
+    prefer_null_aware_operators: warning
+    recursive_getters: error
+    require_trailing_commas: warning
+    sized_box_for_whitespace: warning
+    sized_box_shrink_expand: warning
+    sort_child_properties_last: warning
+    sort_constructors_first: warning
+    sort_unnamed_constructors_first: warning
+    type_annotate_public_apis: warning
+    unawaited_futures: warning
+    use_colored_box: warning
+    use_decorated_box: warning
+    use_enums: warning
+    use_is_even_rather_than_modulo: warning
+    use_named_constants: warning
+    use_super_parameters: warning
+    unnecessary_this: warning
+    prefer_const_constructors: warning
+    avoid_function_literals_in_foreach_calls: ignore
+    constant_identifier_names: ignore
+    await_only_futures: warning
+    prefer_adjacent_string_concatenation: warning
+    prefer_const_literals_to_create_immutables: warning
+    unnecessary_new: warning
+    prefer_collection_literals: warning
+    curly_braces_in_flow_control_structures: warning
+    non_constant_identifier_names: warning
+    avoid_types_as_parameter_names: warning
+    prefer_const_declarations: warning
+    unnecessary_const: warning
+    use_key_in_widget_constructors: warning
+    body_might_complete_normally_nullable: warning
+    override_on_non_overriding_member: warning
+    unnecessary_brace_in_string_interps: warning
+    use_function_type_syntax_for_parameters: warning
+    avoid_bool_literals_in_conditional_expressions: ignore
+    unrelated_type_equality_checks: error
+    prefer_typing_uninitialized_variables: warning
+    avoid_return_types_on_setters: warning
+    prefer_function_declarations_over_variables: warning
+    library_prefixes: warning
+    unnecessary_string_interpolations: warning
+    file_names: warning
+    prefer_const_constructors_in_immutables: warning
+    unnecessary_import: warning
+    unnecessary_null_comparison: warning
+    overridden_fields: warning
+    unused_element: warning
+    deprecated_member_use: warning
 
 linter:
   rules:
@@ -134,7 +215,7 @@ linter:
     always_put_control_body_on_new_line: true
     prefer_constructors_over_static_methods: true
     prefer_final_locals: true
-    only_throw_errors: true
+    only_throw_errors: false
     prefer_relative_imports: false
     avoid_classes_with_only_static_members: false
     use_key_in_widget_constructors: true
@@ -142,7 +223,7 @@ linter:
 
     invalid_runtime_check_with_js_interop_types: true
 
-    # prefer_single_quotes: true
+    prefer_single_quotes: true
     ### Old rules
 
     # Far too verbose, and not that big of a deal when using parameter_assignments
@@ -175,11 +256,11 @@ linter:
     always_put_required_named_parameters_first: true
 
     # This project doesn't use Flutter-style todos
-    flutter_style_todos: true
+    flutter_style_todos: false
 
     # There are situations where we voluntarily want to catch everything,
     # especially as a library.
-    avoid_catches_without_on_clauses: true
+    avoid_catches_without_on_clauses: false
 
     # Boring as it sometimes force a line of 81 characters to be split in two.
     # As long as we try to respect that 80 characters limit, going slightly
@@ -190,7 +271,7 @@ linter:
     avoid_annotating_with_dynamic: false
 
     # conflicts with `prefer_relative_imports`
-    # always_use_package_imports: true
+    always_use_package_imports: true
 
     # Disabled for now until we have NNBD as it otherwise conflicts with `missing_return`
     no_default_cases: false

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 
 class CustomTapHandler extends StatelessWidget {
   const CustomTapHandler({
+    required this.child,
     super.key,
     this.onTap,
     this.onDoubleTap,
@@ -13,7 +14,6 @@ class CustomTapHandler extends StatelessWidget {
     this.highlightColor,
     this.inkBorderRadius,
     this.padding = EdgeInsets.zero,
-    required this.child,
   });
 
   final void Function()? onTap;

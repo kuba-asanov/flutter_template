@@ -2,11 +2,11 @@ part of '../custom_bottom_sheet.dart';
 
 class DraggableBottomSheetContent extends StatefulWidget {
   const DraggableBottomSheetContent({
-    super.key,
     required this.title,
     required this.withIndicator,
     required this.showCloseButton,
     required this.slivers,
+    super.key,
     this.fixedHeight,
     this.initialChildSize = 0.5,
     this.minChildSize = 0.4,
@@ -125,9 +125,9 @@ class _SliverBottomSheetHeaderDelegate extends SliverPersistentHeaderDelegate {
     required this.title,
     required this.withIndicator,
     required this.showCloseButton,
+    required this.textScaler,
     this.description,
     this.withoutTitleAndClose = false,
-    required this.textScaler,
   });
 
   final String title;

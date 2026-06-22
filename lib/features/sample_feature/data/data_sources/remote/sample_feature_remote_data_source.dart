@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:flutter_template/common/network/auth_rest_client.dart';
 import 'package:flutter_template/common/utils/data_parser.dart';
-import '../../models/sample_item_response/sample_item_response.dart';
+import 'package:flutter_template/features/sample_feature/data/models/sample_item_response/sample_item_response.dart';
 
 abstract interface class SampleFeatureRemoteDataSource {
   FutureOr<List<SampleItemResponse>> getSampleItems();

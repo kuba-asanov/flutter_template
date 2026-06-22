@@ -2,8 +2,8 @@
 import 'dart:async';
 import 'package:flutter_template/common/utils/base_usecase.dart';
 
-import '../models/sample_item.dart';
-import '../repository_interfaces/sample_feature_repository.dart';
+import 'package:flutter_template/features/sample_feature/domain/models/sample_item.dart';
+import 'package:flutter_template/features/sample_feature/domain/repository_interfaces/sample_feature_repository.dart';
 
 class GetSampleItemsUsecase
     extends BaseUseCase<List<SampleItem>, GetSampleItemsParams>{

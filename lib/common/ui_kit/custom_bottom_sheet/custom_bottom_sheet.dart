@@ -19,6 +19,8 @@ class CustomBottomSheet {
   static Future<T?> showStaticBottomSheet<T>(
     BuildContext context, {
     required String title,
+    //todo переделать на builder, чтобы получать правильный контекст
+    required Widget child,
     bool withIndicator = true,
     double? fixedHeight,
     bool showCloseButton = false,
@@ -29,8 +31,6 @@ class CustomBottomSheet {
     /// что приводило к некорректной навигации (показ диалога выхода из приложения).
     /// Нужно убрать, когда все будут в сабрутах
     bool useRootNavigator = false, //todo remove
-    //todo переделать на builder, чтобы получать правильный контекст
-    required Widget child,
     int titleMaxLines = 1,
   }) {
     return showModalBottomSheet(
@@ -46,7 +46,8 @@ class CustomBottomSheet {
         maxWidth: double.infinity,
       ),
       builder: (context) => Padding(
-        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+        padding:
+            EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
         child: StaticBottomSheetContent(
           title: title,
           withIndicator: withIndicator,
@@ -65,9 +66,8 @@ class CustomBottomSheet {
   static Future<T?> showScrollBottomSheet<T>(
     BuildContext context, {
     required String title,
-    bool withIndicator = true,
+    required Widget child, bool withIndicator = true,
     bool showCloseButton = false,
-    required Widget child,
     String? description,
     bool withoutTitleAndClose = false,
   }) {

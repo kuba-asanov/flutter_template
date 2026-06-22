@@ -17,10 +17,12 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     Locale? locale,
   })  : _updateThemeUsecase = updateThemeUsecase,
         _updateLocaleUsecase = updateLocaleUsecase,
-        super(SettingsState(
-          themeMode: themeMode,
-          locale: locale,
-        )) {
+        super(
+          SettingsState(
+            themeMode: themeMode,
+            locale: locale,
+          ),
+        ) {
     on<UpdateThemeEvent>(_onUpdateTheme);
     on<UpdateLocaleEvent>(_onUpdateLocale);
   }
@@ -30,7 +32,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
 
   Future<void> _onUpdateTheme(UpdateThemeEvent event, Emitter emit) async {
     final newThemeMode = event.newThemeMode;
-    if (newThemeMode == null || newThemeMode == state.themeMode) return;
+    if (newThemeMode == null || newThemeMode == state.themeMode) {
+      return;
+    }
 
     await _updateThemeUsecase.invoke(newThemeMode);
 
@@ -39,7 +43,9 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
 
   Future<void> _onUpdateLocale(UpdateLocaleEvent event, Emitter emit) async {
     final newLocale = event.newLocale;
-    if (newLocale == null || newLocale == state.locale) return;
+    if (newLocale == null || newLocale == state.locale) {
+      return;
+    }
 
     await _updateLocaleUsecase.invoke(newLocale);
 

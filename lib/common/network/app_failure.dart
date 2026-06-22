@@ -19,11 +19,11 @@ class UnknownFailure extends Equatable implements AppFailure {
   final StackTrace stackTrace;
 
   @override
-  String get message => "Unknown failure";
+  String get message => 'Unknown failure';
 
   @override
   String toString() {
-    return "$message \n $failure $stackTrace";
+    return '$message \n $failure $stackTrace';
   }
 
   @override
@@ -47,7 +47,7 @@ class NoInternetFailure extends NetworkFailure {
   const NoInternetFailure();
 
   @override
-  String get message => "Internet Fails";
+  String get message => 'Internet Fails';
 }
 
 class ServiceUnavailableFailure extends NetworkFailure {
@@ -61,7 +61,7 @@ class ServiceUnavailableFailure extends NetworkFailure {
   List<Object?> get props => [message, statusCode];
 
   @override
-  String get message => "Service unavailable";
+  String get message => 'Service unavailable';
 }
 
 class ServerFailure<ErrorJsonT> extends NetworkFailure {
@@ -80,9 +80,9 @@ class ServerFailure<ErrorJsonT> extends NetworkFailure {
 
   @override
   String toString() {
-    return "${super.toString()} \nmodel:\n${model.toString()}";
+    return '${super.toString()} \nmodel:\n${model.toString()}';
   }
 
   @override
-  String get message => "Server error";
+  String get message => 'Server error';
 }

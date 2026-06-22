@@ -86,13 +86,17 @@ class CoreDiModule extends DiModuleAsync {
         }
         return dio;
       })
-      ..registerSingleton(AuthRestClient(
-        get<Dio>(),
-        get<SecureStorage>(),
-      ))
-      ..registerSingleton(UnAuthRestClient(
-        get<Dio>(),
-      ))
+      ..registerSingleton(
+        AuthRestClient(
+          get<Dio>(),
+          get<SecureStorage>(),
+        ),
+      )
+      ..registerSingleton(
+        UnAuthRestClient(
+          get<Dio>(),
+        ),
+      )
 
       /// Domain
       ///

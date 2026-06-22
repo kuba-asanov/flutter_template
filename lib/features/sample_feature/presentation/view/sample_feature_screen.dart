@@ -38,21 +38,16 @@ class SampleFeatureScreen extends StatelessWidget {
   }
 
   Widget _buildBody(BuildContext context, SampleFeatureState state) {
-    switch (state.status) {
-      case SampleFeatureStatus.initial:
-        // This state should not be displayed as initialization
-        // happens immediately after getting bloc from DI
-        return const _LoadingView();
-      case SampleFeatureStatus.loading:
-        return const _LoadingView();
-      case SampleFeatureStatus.loaded:
-        return _LoadedView(
+    return switch (state.status) {
+      SampleFeatureStatus.initial ||
+      SampleFeatureStatus.loading =>
+        const _LoadingView(),
+      SampleFeatureStatus.loaded => _LoadedView(
           items: state.sampleItems ?? [],
           router: router,
-        );
-      case SampleFeatureStatus.error:
-        return const _ErrorView();
-    }
+        ),
+      SampleFeatureStatus.error => const _ErrorView(),
+    };
   }
 }
 

@@ -1,8 +1,8 @@
 {{#isUseFreezed}}import 'package:freezed_annotation/freezed_annotation.dart';{{/isUseFreezed}}
 import 'package:equatable/equatable.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../domain/usecases/get_some_data_{{#isUseModelAsList}}list_{{/isUseModelAsList}}usecase.dart';
-{{#isUseFreezed}}import '../../domain/models/some_data.dart';{{/isUseFreezed}}
+{{#isUseFreezed}}import 'package:flutter_template/features/{{name.snakeCase()}}/domain/models/some_data.dart';{{/isUseFreezed}}
+import 'package:flutter_template/features/{{name.snakeCase()}}/domain/usecases/get_some_data_{{#isUseModelAsList}}list_{{/isUseModelAsList}}usecase.dart';
 part '{{name.snakeCase()}}_event.dart';
 part '{{name.snakeCase()}}_state.dart';
 {{#isUseFreezed}}part '{{name.snakeCase()}}_status.dart';

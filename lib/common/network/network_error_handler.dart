@@ -27,7 +27,7 @@ class NetworkErrorHandlerImpl implements NetworkErrorHandler {
       final response = exception.response;
       final model = _tryParseServerFailure(response);
 
-      if (model.code.toLowerCase() == "internal_server_error") {
+      if (model.code.toLowerCase() == 'internal_server_error') {
         throw ServiceUnavailableFailure(statusCode: statusCode);
       }
 

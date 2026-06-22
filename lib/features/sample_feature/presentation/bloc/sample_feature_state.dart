@@ -1,7 +1,7 @@
 part of 'sample_feature_bloc.dart';
 
 @freezed
-abstract class SampleFeatureState with _$SampleFeatureState {
+sealed class SampleFeatureState with _$SampleFeatureState {
   const factory SampleFeatureState({
     required SampleFeatureStatus status,
     List<SampleItem>? sampleItems,

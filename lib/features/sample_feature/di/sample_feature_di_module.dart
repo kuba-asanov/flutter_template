@@ -1,10 +1,9 @@
+import 'package:flutter_template/features/sample_feature/data/data_sources/remote/sample_feature_remote_data_source.dart';
+import 'package:flutter_template/features/sample_feature/data/repositories/sample_feature_repository_impl.dart';
+import 'package:flutter_template/features/sample_feature/domain/repository_interfaces/sample_feature_repository.dart';
+import 'package:flutter_template/features/sample_feature/domain/usecases/get_sample_items_usecase.dart';
+import 'package:flutter_template/features/sample_feature/presentation/bloc/sample_feature_bloc.dart';
 import 'package:scoped_di/scoped_di.dart';
-
-import '../data/data_sources/remote/sample_feature_remote_data_source.dart';
-import '../data/repositories/sample_feature_repository_impl.dart';
-import '../domain/repository_interfaces/sample_feature_repository.dart';
-import '../domain/usecases/get_sample_items_usecase.dart';
-import '../presentation/bloc/sample_feature_bloc.dart';
 
 class SampleFeatureDiModule extends DiModule {
   @override

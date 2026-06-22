@@ -7,8 +7,8 @@ import 'package:flutter_template/features/settings/presentation/bloc/settings_bl
 
 class SettingsView extends StatelessWidget {
   const SettingsView({
-    super.key,
     required this.bloc,
+    super.key,
   });
 
   final SettingsBloc bloc;
@@ -32,7 +32,7 @@ class SettingsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "${locale.theme}:",
+                      '${locale.theme}:',
                       style: const AppTextStyles.subtitle1(),
                     ),
                     DropdownButton<ThemeMode>(
@@ -60,7 +60,7 @@ class SettingsView extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      "${locale.localization}:",
+                      '${locale.localization}:',
                       style: const AppTextStyles.subtitle1(),
                     ),
                     DropdownButton<Locale>(
